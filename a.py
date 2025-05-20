@@ -125,21 +125,29 @@ def reset(update: Update, context: CallbackContext) -> None:
     used_users[chat_id] = set()
     update.message.reply_text("🔁 New round started! Everyone can play again.")
 
-def main() -> None:
-    """Start the bot and register handlers."""
+
+
+
+def main():
     updater = Updater(TOKEN, use_context=True)
     dispatcher = updater.dispatcher
 
-    # Register commands
     dispatcher.add_handler(CommandHandler("start", start))
     dispatcher.add_handler(CommandHandler("truth", truth))
     dispatcher.add_handler(CommandHandler("dare", dare))
     dispatcher.add_handler(CommandHandler("reset", reset))
 
-    # Start the bot
-    updater.start_polling()
-    print("Bot started. Listening for commands...")
-    updater.idle()
+    PORT = int(os.environ.get('PORT', 8443))
+    APP_URL = os.environ.get("APP_URL")  # Must set this in Render environment variables
 
+    updater.start_webhook(
+        listen="0.0.0.0",
+        port=PORT,
+        url_path=TOKEN,
+        webhook_url=f"{APP_URL}/{TOKEN}"
+    )
+
+    print("Bot running via webhook...")
+    updater.idle()
 if __name__ == "__main__":
     main()
