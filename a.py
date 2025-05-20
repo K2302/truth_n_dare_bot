@@ -14,9 +14,8 @@ used_users = {}
 TRUTH_QUESTIONS = [
     "What's your most embarrassing song on repeat?",
     "What's one thing you're secretly good at?",
-    "If you could switch lives with someone for a day, who would it be?",
+    "If you could switch lives with someone for a day, who would it be from gc?",
     "What's your biggest irrational fear?",
-    "What's the most spontaneous thing you've ever done?",
     "If animals could talk, which would be the rudest?",
     "What's your go-to procrastination activity?",
     "If you had a theme song, what would it be?",
@@ -26,35 +25,47 @@ TRUTH_QUESTIONS = [
     "What's one thing you can't live without in your daily routine?",
     "If you could have dinner with any fictional character, who would it be?",
     "What's your favorite childhood memory?",
-    "What's something you're looking forward to doing soon?",
-    "If you could relive any day, which would it be?",
-    "What's the best advice you've ever received?",
+    "What's something you're looking forward to doing soon ?",
     "If you could travel anywhere instantly, where would you go?",
     "What's your favorite way to relax?",
     "If you could switch roles with someone for a day, who would it be and why?"
+    "What’s that one song you would like to be played at your funeral?",
+    "Are you honest about your age?",
+    "Have you ever practiced kissing in a mirror?",
+    "What’s a non-sexual act that secretly turns you on?",
+    "What’s a skill you wish you had?",
+    "What’s one thing on your bucket list?",
+    "Describe your ideal partner.",
+    "Have you dreamed about someone you like? What happened?",
+    "Out of the people you've liked, who do you find most attractive?",
+    "Have you ever written secret letters to your crush?",
+    "Are you in a relationship right now?",
+    "Have you ever been ghosted?",
+    "Do you like someone as of the moment?"
+    "Who would you date if you have to date someone from gc opposite gender"
+    "Who would be your ideal partner if he or she changes opposite gender"
 ]
 
 DARE_QUESTIONS = [
-    "Send a flirty pickup line — cheesy or original.",
-    "Text a random emoji to your crush (or pretend you did 😏).",
-    "Change your profile name to 'Cutie of the Chat' for 15 mins.",
+    "Send a flirty pickup line in vn cheesy or original.",
+    "Text a random romantic emoji to your crush (or pretend you did 😏).",
+    "Change your profile name to 'Idiot of the Chat' for 15 mins.",
     "Send a voice note pretending you're confessing to your crush.",
     "Type a message like you're madly in love with the next player who replies.",
-    "Use a GIF to describe your last crush.",
+    "Use a vn to describe your last crush.",
     "Reveal the initials of someone you’ve had a crush on.",
-    "Send a fake love letter starting with 'Dear Stranger...'",
+    "Send a fake love letter and share ss starting with 'Dear Stranger...' picked by gc member",
     "Pretend you're on a dating app and write your bio in 3 lines.",
-    "Compliment another player like you're flirting (keep it fun, not creepy).",
+    "Compliment another player like you're flirting (keep it fun, not creepy) in vn opposite gender.",
     "Send a selfie captioned as if it’s your dating profile.",
     "Create a dramatic breakup message with an imaginary partner.",
     "Tell the group your most harmless guilty pleasure.",
-    "Send a heart emoji to 3 people in the main chat (no repeats).",
+    "Send a heart emoji to 2 people in the main chat (no repeats) 1 must be of opposite gender.",
     "Name a toxic movie character you secretly find attractive.",
     "Pretend you're on a romantic reality show — introduce yourself (vn).",
-    "Write a romantic poem... about pizza or food.",
     "Reveal a minor secret that you've never told anyone here.",
-    "Send a message using only 🔥, 💋, 💖, 😳 emojis.",
-    "Type your next message as if you're love-struck."
+    "Send a message using only 🔥, 💋, 💖, 😳 emojis to a random person who will be picked by gc member.",
+    "Type your next message as if you're love-struck picked by gc member."
 ]
 
 
