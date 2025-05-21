@@ -1,11 +1,29 @@
+# At top
+from flask import Flask
+from threading import Thread
+
+app = Flask('')
+
+@app.route('/')
+def home():
+    return "I'm alive"
+
+def run():
+    app.run(host='0.0.0.0', port=8080)
+
+def keep_alive():
+    t = Thread(target=run)
+    t.start()
+
 import random
 import os
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, CallbackContext
-from dotenv import load_dotenv
 
-load_dotenv()
-TOKEN = os.getenv("TOKEN")
+ TOKEN = os.environ["TOKEN"]
+
+# load_dotenv()
+# TOKEN = os.getenv("TOKEN")
 # Used to track who has already played in each group
 used_users = {}
 
@@ -25,7 +43,7 @@ TRUTH_QUESTIONS = [
     "Who's the most supportive member in the group?",
     "Who's the most similar to you in terms of interests?",
     "Who do you think would be the best at giving advice?",
-    "Who's the most fun to have around?"
+    "Who's the most fun to have around?",
     "What's something you're proud of accomplishing?",
     "What's one thing you can't live without in your daily routine?",
     "If you could have dinner with any fictional character, who would it be?",
@@ -33,7 +51,7 @@ TRUTH_QUESTIONS = [
     "What's something you're looking forward to doing soon ?",
     "If you could travel anywhere instantly, where would you go?",
     "What's your favorite way to relax?",
-    "If you could switch roles with someone for a day, who would it be and why?"
+    "If you could switch roles with someone for a day, who would it be and why?",
     "What’s that one song you would like to be played at your funeral?",
     "Are you honest about your age?",
     "Have you ever practiced kissing in a mirror?",
@@ -45,8 +63,8 @@ TRUTH_QUESTIONS = [
     "Have you ever written secret letters to your crush?",
     "Are you in a relationship right now?",
     "Have you ever been ghosted?",
-    "Do you like someone as of the moment?"
-    "Who would you date if you have to date someone from gc opposite gender"
+    "Do you like someone as of the moment?",
+    "Who would you date if you have to date someone from gc opposite gender",
     "Who would be your ideal partner if he or she changes opposite gender"
 ]
 
@@ -128,26 +146,20 @@ def reset(update: Update, context: CallbackContext) -> None:
 
 
 
-def main():
+def main() -> None:
+    """Start the bot and register handlers."""
     updater = Updater(TOKEN, use_context=True)
     dispatcher = updater.dispatcher
 
+    # Register commands
     dispatcher.add_handler(CommandHandler("start", start))
     dispatcher.add_handler(CommandHandler("truth", truth))
     dispatcher.add_handler(CommandHandler("dare", dare))
     dispatcher.add_handler(CommandHandler("reset", reset))
 
-    PORT = int(os.environ.get('PORT', 8443))
-    APP_URL = os.environ.get("APP_URL")  # Must set this in Render environment variables
-
-    updater.start_webhook(
-        listen="0.0.0.0",
-        port=PORT,
-        url_path=TOKEN,
-        webhook_url=f"{APP_URL}/{TOKEN}"
-    )
-
-    print("Bot running via webhook...")
+    # Start the bot
+    updater.start_polling()
+    print("Bot started. Listening for commands...")
     updater.idle()
 if __name__ == "__main__":
     main()
